@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nour El Hayat | Abayas & Vêtements Islamiques</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FEFAF6;
+            color: #2C2418;
+            line-height: 1.4;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid rgba(151, 112, 82, 0.2);
+            position: sticky;
+            top: 0;
+            background: #FEFAF6;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(254, 250, 246, 0.95);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #9B6A4A, #6D4C3A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-size: 0.8rem;
+            color: #8B6B4F;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #3E2C21;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #B67B4A;
+        }
+
+        .cart-icon-wrapper {
+            position: relative;
+            cursor: pointer;
+            background: #F5EDE5;
+            padding: 10px 14px;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cart-icon-wrapper:hover {
+            background: #EADBCE;
+            transform: scale(1.02);
+        }
+        .cart-icon-wrapper i {
+            font-size: 1.4rem;
+            color: #9B6A4A;
+        }
+        .cart-count {
+            background: #C28A5C;
+            color: white;
+            border-radius: 50px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 0 40px;
+            animation: fadeUp 0.6s ease;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+        .badge {
+            background: #EADBCE;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #7A4E30;
+        }
+        .btn-primary {
+            background: #9B6A4A;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background: #7E553C;
+            transform: translateY(-2px);
+        }
+
+        /* Collection Sections */
+        .collection-section {
+            margin: 60px 0 40px;
+        }
+        .collection-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #2C2418;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .collection-title i {
+            color: #C28A5C;
+            font-size: 1.8rem;
+        }
+        .collection-desc {
+            color: #8B6B4F;
+            margin-bottom: 32px;
+            font-size: 1rem;
+            border-left: 3px solid #D9B48B;
+            padding-left: 16px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #F0E3D8;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(108, 67, 43, 0.2);
+            border-color: #E4D0C0;
+        }
+        .product-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            background: #F8F0E9;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.03);
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .product-subtitle {
+            font-size: 0.8rem;
+            color: #B28B67;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .product-price {
+            font-weight: 800;
+            color: #9B6A4A;
+            font-size: 1.2rem;
+            margin: 12px 0;
+        }
+        .product-desc {
+            color: #6C5A4A;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #CAAE94;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            color: #6D4C3A;
+            font-size: 0.9rem;
+        }
+        .btn-outline:hover {
+            background: #EBDBCE;
+            border-color: #9B6A4A;
+            transform: scale(0.98);
+        }
+
+        /* Services & Testimonials */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .service-card {
+            background: white;
+            padding: 28px;
+            border-radius: 32px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #F0E3D8;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .service-card i {
+            font-size: 2.2rem;
+            color: #9B6A4A;
+            margin-bottom: 15px;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .testimonial {
+            background: white;
+            padding: 28px;
+            border-radius: 32px;
+            border-left: 5px solid #D9B48B;
+            transition: 0.3s;
+        }
+        .testimonial:hover {
+            transform: translateX(5px);
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -500px;
+            width: 420px;
+            max-width: 90vw;
+            height: 100vh;
+            background: #FFFFFF;
+            box-shadow: -8px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .cart-header {
+            padding: 24px;
+            border-bottom: 1px solid #F0E3D8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 {
+            font-size: 1.4rem;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #9B6A4A;
+        }
+        .cart-items-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .cart-item {
+            display: flex;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid #F5EDE5;
+            animation: fadeSlideIn 0.3s ease;
+        }
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            background: #F8F0E9;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #F0E3D8;
+            background: #FEFAF6;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .btn-checkout {
+            background: #9B6A4A;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-checkout:hover {
+            background: #7E553C;
+        }
+        .toast-notif {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: #2C2418;
+            color: #FFE6D5;
+            padding: 12px 24px;
+            border-radius: 60px;
+            z-index: 1100;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .footer {
+            background: #2A221B;
+            color: #E9DDD2;
+            padding: 48px 0 24px;
+            margin-top: 60px;
+            border-radius: 48px 48px 0 0;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateX(20px);}
+            to { opacity: 1; transform: translateX(0);}
+        }
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; }
+            .container { padding: 0 20px; }
+            .hero-content h1 { font-size: 2rem; }
+            .toast-notif { white-space: normal; text-align: center; width: 80%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Nour El Hayat</h1>
+            <span>✨ Élégance & Pudeur ✨</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#temoignages">Avis</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="cart-icon-wrapper" id="cartIcon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge">Collection Printemps-Été 2026</div>
+            <h1>L'élégance modeste,<br>inspiration divine</h1>
+            <button class="btn-primary" id="exploreBtn">Explorer les collections <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div style="flex:1; background:#EADBCE; border-radius:48px; padding:20px; text-align:center;">
+            <i class="fas fa-kaaba" style="font-size:7rem; color:#9B6A4A;"></i>
+            <p style="margin-top: 10px;">Nouvelle Collection • Élégance & Cérémonie</p>
+        </div>
+    </div>
+
+    <!-- Conteneur des collections -->
+    <div id="collections">
+        <div id="collection-elegance"></div>
+        <div id="collection-casual"></div>
+        <div id="collection-confort"></div>
+    </div>
+
+    <div id="services">
+        <h2 class="collection-title" style="justify-content:center;"><i class="fas fa-hand-sparkles"></i> Nos Services Premium</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-ruler-combined"></i><h4>Retouches Gratuites</h4><p>Ajustement parfait pour chaque silhouette</p></div>
+            <div class="service-card"><i class="fas fa-gem"></i><h4>Broderie Personnalisée</h4><p>Initiales & motifs délicats</p></div>
+            <div class="service-card"><i class="fas fa-truck-fast"></i><h4>Livraison Express</h4><p>Monde entier sous 48h</p></div>
+            <div class="service-card"><i class="fas fa-hand-sparkles"></i><h4>Conseil en Style</h4><p>Assistante virtuelle dédiée</p></div>
+        </div>
+    </div>
+
+    <div id="temoignages">
+        <h2 class="collection-title" style="justify-content:center;"><i class="fas fa-star"></i> Elles nous ont fait confiance</h2>
+        <div class="testimonials-grid" id="testimonialsContainer"></div>
+    </div>
+</div>
+
+<footer class="footer" id="contact">
+    <div class="container">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;">
+            <div>
+                <h4 style="margin-bottom:15px;">Nour El Hayat</h4>
+                <p>Mode islamique haut de gamme</p>
+                <div style="margin-top:15px;">
+                    <i class="fab fa-instagram" style="margin-right:15px; font-size:1.3rem; cursor:pointer;"></i>
+                    <i class="fab fa-facebook-f" style="margin-right:15px; font-size:1.3rem; cursor:pointer;"></i>
+                    <i class="fab fa-pinterest-p" style="font-size:1.3rem; cursor:pointer;"></i>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom:15px;">Liens rapides</h4>
+                <p style="margin-bottom:8px;">Nouveautés</p>
+                <p style="margin-bottom:8px;">Guide des tailles</p>
+                <p style="margin-bottom:8px;">FAQ</p>
+                <p>Conditions générales</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom:15px;">Contact</h4>
+                <p style="margin-bottom:8px;"><i class="fas fa-phone-alt"></i> +33 1 23 45 67 89</p>
+                <p style="margin-bottom:8px;"><i class="fas fa-envelope"></i> contact@nour-elhayat.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(203,186,168,0.2);">
+            © 2026 Nour El Hayat - Élégance & Pudeur | Tous droits réservés
+        </div>
+    </div>
+</footer>
+
+<!-- Panier Sidebar -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-bag"></i> Mon panier</h3>
+        <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"><div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-heart"></i></div></div>
+    <div class="cart-footer">
+        <div class="cart-total"><span>Total :</span><span id="cartTotalPrice">0 €</span></div>
+        <button class="btn-checkout" id="checkoutBtn">Passer la commande <i class="fas fa-arrow-right"></i></button>
+    </div>
+</div>
+<div id="toastMsg" class="toast-notif"></div>
+
+<script>
+    // ---------- DONNÉES PRODUITS AVEC IMAGES (dossier "Collection/") ----------
+    const products = [
+        // Collection Élégance & Cérémonie
+        { id: 1, name: "Abaya 'Lace Prestige'", subtitle: "Robe Longue en Dentelle Blanche", price: 289, desc: "Boutonnage perlé, dentelle raffinée, coupe cérémonie parfaite pour les grandes occasions.", image: "Collection/img_7.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 2, name: "Robe 'Éclat Lunaire'", subtitle: "Abaya de Soirée Blanche", price: 329, desc: "Textures scintillantes, effet lumière captivant, manches évassées pour un look glamour.", image: "Collection/img_3.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 3, name: "Abaya 'Pureté Satinée'", subtitle: "Robe Chemise Blanche", price: 249, desc: "Col volanté raffiné, manches évasées, satin fluide pour une élégance intemporelle.", image: "Collection/img_4.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        // Collection Casual & Minimaliste
+        { id: 4, name: "Ensemble 'Sérénité Grise'", subtitle: "Abaya Fluide Anthracite", price: 199, desc: "Hijab assorti inclus, coupe minimaliste et légère, parfait pour le quotidien.", image: "Collection/img_6.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 5, name: "Ensemble 'Olive Urbaine'", subtitle: "Tunique Longue à Fentes", price: 179, desc: "Pantalon large assorti, style moderne et urbain avec des fentes latérales élégantes.", image: "Collection/img_5.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 6, name: "Robe 'Drapé Impérial'", subtitle: "Abaya Bordeaux", price: 219, desc: "Cascade latérale, poignets élastiqués, drapé élégant pour une allure sophistiquée.", image: "Collection/img_2.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
+        // Collection Confort & Texture
+        { id: 7, name: "Robe 'Douceur Bicolore'", subtitle: "Robe en Maille Côtelée Beige", price: 159, desc: "Détail chasuble chocolat, confort douillet, texture tendance et moderne.", image: "Collection/img_1.jpeg", collection: "confort", collectionName: "Confort & Texture" }
+    ];
+
+    let cart = [];
+
+    // Éléments DOM
+    const cartSidebar = document.getElementById('cartSidebar');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartIconBtn = document.getElementById('cartIcon');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartCountSpan = document.getElementById('cartCount');
+    const cartTotalSpan = document.getElementById('cartTotalPrice');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(message) {
+        toastMsg.textContent = message;
+        toastMsg.style.opacity = '1';
+        toastMsg.style.transform = 'translateX(-50%) scale(1)';
+        setTimeout(() => {
+            toastMsg.style.opacity = '0';
+            toastMsg.style.transform = 'translateX(-50%) scale(0.9)';
+        }, 1800);
+    }
+
+    function saveCart() {
+        localStorage.setItem('nourCart', JSON.stringify(cart));
+        updateCartUI();
+    }
+
+    function loadCart() {
+        const saved = localStorage.getItem('nourCart');
+        if(saved) { cart = JSON.parse(saved); if(!Array.isArray(cart)) cart = []; }
+        else cart = [];
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
+        cartCountSpan.innerText = totalItems;
+        if(cart.length === 0) {
+            cartItemsList.innerHTML = `<div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-shopping-bag"></i></div>`;
+            cartTotalSpan.innerText = `0 €`;
+            return;
+        }
+        let html = '', total = 0;
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            html += `
+                <div class="cart-item">
+                    <div class="cart-item-img"><img src="${item.image}" alt="${item.name}" onerror="this.src='https://placehold.co/70x70/F8F0E9/C28A5C?text=Abaya'"></div>
+                    <div style="flex:1;">
+                        <h4 style="font-size:0.95rem;">${item.name}</h4>
+                        <div style="color:#9B6A4A; font-weight:600;">${item.price} €</div>
+                        <div style="display:flex; gap:12px; margin-top:8px; align-items:center;">
+                            <button class="cart-qty-minus" data-id="${item.id}" style="background:#F5EDE5; border:none; width:28px; height:28px; border-radius:30px; cursor:pointer;">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="cart-qty-plus" data-id="${item.id}" style="background:#F5EDE5; border:none; width:28px; height:28px; border-radius:30px; cursor:pointer;">+</button>
+                            <button class="cart-remove" data-id="${item.id}" style="background:none; border:none; color:#C28A5C; cursor:pointer;"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    <div style="font-weight:700;">${itemTotal} €</div>
+                </div>
+            `;
+        });
+        cartItemsList.innerHTML = html;
+        cartTotalSpan.innerText = `${total} €`;
+        document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), 1); }));
+        document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), -1); }));
+        document.querySelectorAll('.cart-remove').forEach(btn => btn.addEventListener('click', (e) => { removeFromCart(parseInt(btn.dataset.id)); }));
+    }
+
+    function updateQuantity(id, delta) {
+        const idx = cart.findIndex(i => i.id === id);
+        if(idx !== -1) {
+            const newQty = cart[idx].quantity + delta;
+            if(newQty <= 0) cart.splice(idx,1);
+            else cart[idx].quantity = newQty;
+            saveCart();
+            showToast(delta > 0 ? "Quantité augmentée" : "Quantité diminuée");
+        }
+    }
+    function removeFromCart(id) { cart = cart.filter(i => i.id !== id); saveCart(); showToast("Article retiré du panier"); }
+
+    function addToCart(product) {
+        const existing = cart.find(i => i.id === product.id);
+        if(existing) { existing.quantity++; saveCart(); showToast(`➕ ${product.name} (x${existing.quantity})`); }
+        else { cart.push({ ...product, quantity: 1 }); saveCart(); showToast(`✨ ${product.name} ajouté au panier`); }
+        
+        // Animation sur l'icône panier
+        const cartIcon = document.getElementById('cartIcon');
+        cartIcon.style.transform = 'scale(1.05)';
+        setTimeout(() => { cartIcon.style.transform = 'scale(1)'; }, 200);
+    }
+
+    function openCart() { cartSidebar.classList.add('open'); cartOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeCart() { cartSidebar.classList.remove('open'); cartOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
+    // Rendu des collections
+    function renderCollections() {
+        const eleganceDiv = document.getElementById('collection-elegance');
+        const casualDiv = document.getElementById('collection-casual');
+        const confortDiv = document.getElementById('collection-confort');
+        
+        const eleganceProds = products.filter(p => p.collection === 'elegance');
+        const casualProds = products.filter(p => p.collection === 'casual');
+        const confortProds = products.filter(p => p.collection === 'confort');
+        
+        eleganceDiv.innerHTML = `
+            <div class="collection-section">
+                <div class="collection-title"><i class="fas fa-crown"></i> Collection Élégance & Cérémonie</div>
+                <div class="collection-desc">Des pièces d'exception pour vos moments précieux, alliant raffinement et tradition.</div>
+                <div class="products-grid" id="grid-elegance"></div>
+            </div>
+        `;
+        casualDiv.innerHTML = `
+            <div class="collection-section">
+                <div class="collection-title"><i class="fas fa-leaf"></i> Collection Casual & Minimaliste</div>
+                <div class="collection-desc">L'élégance du quotidien, des silhouettes sobres et modernes pour toutes les femmes.</div>
+                <div class="products-grid" id="grid-casual"></div>
+            </div>
+        `;
+        confortDiv.innerHTML = `
+            <div class="collection-section">
+                <div class="collection-title"><i class="fas fa-cloud-moon"></i> Collection Confort & Texture</div>
+                <div class="collection-desc">Des matières douces et enveloppantes pour un style décontracté et chic.</div>
+                <div class="products-grid" id="grid-confort"></div>
+            </div>
+        `;
+        
+        function renderGrid(containerId, productsArray) {
+            const grid = document.getElementById(containerId);
+            if(!grid) return;
+            grid.innerHTML = productsArray.map(p => `
+                <div class="product-card">
+                    <img class="product-img" src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/400x320/F8F0E9/C28A5C?text=Nour+El+Hayat'">
+                    <div class="product-info">
+                        <h3>${p.name}</h3>
+                        <div class="product-subtitle">${p.subtitle}</div>
+                        <div class="product-price">${p.price} €</div>
+                        <div class="product-desc">${p.desc}</div>
+                        <button class="btn-outline add-cart-btn" data-id="${p.id}"><i class="fas fa-bag-shopping"></i> Ajouter au panier</button>
+                    </div>
+                </div>
+            `).join('');
+            grid.querySelectorAll('.add-cart-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = parseInt(btn.dataset.id);
+                    const product = products.find(p => p.id === id);
+                    if(product) addToCart(product);
+                });
+            });
+        }
+        renderGrid('grid-elegance', eleganceProds);
+        renderGrid('grid-casual', casualProds);
+        renderGrid('grid-confort', confortProds);
+    }
+
+    function renderTestimonials() {
+        const testimonials = [
+            { name: "Amina D.", role: "Cliente fidèle", text: "Les abayas sont d'une qualité exceptionnelle, la dentelle 'Lace Prestige' est magnifique !", icon: "fas fa-female" },
+            { name: "Sofia L.", role: "Styliste modeste", text: "Enfin une marque qui comprend la femme moderne tout en respectant la pudeur avec élégance.", icon: "fas fa-star" },
+            { name: "Yasmine K.", role: "Influenceuse mode", text: "La collection confort & texture est un coup de cœur, la robe bicolore est parfaite au quotidien.", icon: "fas fa-heart" }
+        ];
+        const container = document.getElementById('testimonialsContainer');
+        container.innerHTML = testimonials.map(t => `
+            <div class="testimonial">
+                <p><i class="fas fa-quote-left" style="color:#D9B48B; margin-right:8px;"></i> "${t.text}"</p>
+                <div style="display:flex; gap:12px; align-items:center; margin-top:20px;">
+                    <i class="${t.icon}" style="font-size:2rem; color:#C28A5C;"></i>
+                    <div><h5 style="font-size:1rem;">${t.name}</h5><span style="font-size:0.8rem; color:#8B6B4F;">${t.role}</span></div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Événements
+    document.getElementById('exploreBtn')?.addEventListener('click', () => {
+        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+    });
+    cartIconBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+        if(cart.length === 0) showToast("Votre panier est vide");
+        else { 
+            showToast("🧾 Commande validée ! Merci pour votre confiance ❤️"); 
+            cart = []; 
+            saveCart(); 
+            closeCart(); 
+        }
+    });
+
+    // Initialisation
+    renderCollections();
+    renderTestimonials();
+    loadCart();
+</script>
+</body>
+</html>
