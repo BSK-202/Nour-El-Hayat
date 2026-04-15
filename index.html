@@ -505,9 +505,9 @@
             </div>
             <div>
                 <h4 style="margin-bottom:15px;">Contact</h4>
-                <p style="margin-bottom:8px;"><i class="fas fa-phone-alt"></i> +33 1 23 45 67 89</p>
+                <p style="margin-bottom:8px;"><i class="fas fa-phone-alt"></i> +212 6 23 45 67 89</p>
                 <p style="margin-bottom:8px;"><i class="fas fa-envelope"></i> contact@nour-elhayat.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mohammedia, Maroc</p>
             </div>
         </div>
         <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(203,186,168,0.2);">
@@ -525,25 +525,38 @@
     </div>
     <div class="cart-items-list" id="cartItemsList"><div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-heart"></i></div></div>
     <div class="cart-footer">
-        <div class="cart-total"><span>Total :</span><span id="cartTotalPrice">0 €</span></div>
+        <div class="cart-total"><span>Total :</span><span id="cartTotalPrice">0DH</span></div>
         <button class="btn-checkout" id="checkoutBtn">Passer la commande <i class="fas fa-arrow-right"></i></button>
     </div>
 </div>
 <div id="toastMsg" class="toast-notif"></div>
 
 <script>
-    // ---------- DONNÉES PRODUITS AVEC IMAGES (dossier "Collection/") ----------
+    // ---------- DONNÉES PRODUITS AVEC 18 PRODUITS (6 par collection) ----------
     const products = [
-        // Collection Élégance & Cérémonie
-        { id: 1, name: "Abaya 'Lace Prestige'", subtitle: "Robe Longue en Dentelle Blanche", price: 289, desc: "Boutonnage perlé, dentelle raffinée, coupe cérémonie parfaite pour les grandes occasions.", image: "Collection/img_7.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 2, name: "Robe 'Éclat Lunaire'", subtitle: "Abaya de Soirée Blanche", price: 329, desc: "Textures scintillantes, effet lumière captivant, manches évassées pour un look glamour.", image: "Collection/img_3.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 3, name: "Abaya 'Pureté Satinée'", subtitle: "Robe Chemise Blanche", price: 249, desc: "Col volanté raffiné, manches évasées, satin fluide pour une élégance intemporelle.", image: "Collection/img_4.jpeg", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        // Collection Casual & Minimaliste
-        { id: 4, name: "Ensemble 'Sérénité Grise'", subtitle: "Abaya Fluide Anthracite", price: 199, desc: "Hijab assorti inclus, coupe minimaliste et légère, parfait pour le quotidien.", image: "Collection/img_6.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 5, name: "Ensemble 'Olive Urbaine'", subtitle: "Tunique Longue à Fentes", price: 179, desc: "Pantalon large assorti, style moderne et urbain avec des fentes latérales élégantes.", image: "Collection/img_5.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 6, name: "Robe 'Drapé Impérial'", subtitle: "Abaya Bordeaux", price: 219, desc: "Cascade latérale, poignets élastiqués, drapé élégant pour une allure sophistiquée.", image: "Collection/img_2.jpeg", collection: "casual", collectionName: "Casual & Minimaliste" },
-        // Collection Confort & Texture
-        { id: 7, name: "Robe 'Douceur Bicolore'", subtitle: "Robe en Maille Côtelée Beige", price: 159, desc: "Détail chasuble chocolat, confort douillet, texture tendance et moderne.", image: "Collection/img_1.jpeg", collection: "confort", collectionName: "Confort & Texture" }
+        // Collection Élégance & Cérémonie (6 produits)
+        { id: 1, name: "Abaya 'Lace Prestige'", subtitle: "Robe Longue en Dentelle Blanche", price: 189, desc: "Boutonnage perlé, dentelle raffinée, coupe cérémonie parfaite pour les grandes occasions.", image: "Collection/img_1.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 2, name: "Robe 'Éclat Lunaire'", subtitle: "Abaya de Soirée Blanche", price: 199, desc: "Textures scintillantes, effet lumière captivant, manches évassées pour un look glamour.", image: "Collection/img_2.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 3, name: "Abaya 'Pureté Satinée'", subtitle: "Robe Chemise Blanche", price: 169, desc: "Col volanté raffiné, manches évasées, satin fluide pour une élégance intemporelle.", image: "Collection/img_3.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 4, name: "Abaya 'Nuit Étoilée'", subtitle: "Robe Bleu Nuit Brodée", price: 195, desc: "Broderies délicates, tissu fluide, parfaite pour les cérémonies et soirées chic.", image: "Collection/img_4.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 5, name: "Robe 'Perle d'Orient'", subtitle: "Abaya Ivoire", price: 185, desc: "Détails perlés, manches kimono, une élégance orientale moderne.", image: "Collection/img_5.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        { id: 6, name: "Abaya 'Jardin Secret'", subtitle: "Robe Vert Émeraude", price: 199, desc: "Imprimé floral raffiné, coupe cintrée, élégance et modernité.", image: "Collection/img_6.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
+        
+        // Collection Casual & Minimaliste (6 produits)
+        { id: 7, name: "Ensemble 'Sérénité Grise'", subtitle: "Abaya Fluide Anthracite", price: 159, desc: "Hijab assorti inclus, coupe minimaliste et légère, parfait pour le quotidien.", image: "Collection/img_7.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 8, name: "Ensemble 'Olive Urbaine'", subtitle: "Tunique Longue à Fentes", price: 179, desc: "Pantalon large assorti, style moderne et urbain avec des fentes latérales élégantes.", image: "Collection/img_8.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 9, name: "Robe 'Drapé Impérial'", subtitle: "Abaya Bordeaux", price: 185, desc: "Cascade latérale, poignets élastiqués, drapé élégant pour une allure sophistiquée.", image: "Collection/img_9.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 10, name: "Abaya 'Brume Matinale'", subtitle: "Robe Bleu Ciel", price: 165, desc: "Coupe fluide, manches 3/4, légère et aérienne pour le printemps.", image: "Collection/img_10.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 11, name: "Ensemble 'Élégance Noire'", subtitle: "Abaya Noir Mat", price: 175, desc: "Ligne épurée, ceinture assortie, un basique chic et intemporel.", image: "Collection/img_11.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        { id: 12, name: "Robe 'Sable Doré'", subtitle: "Abaya Beige Camel", price: 169, desc: "Teinte naturelle, coupe relax, parfaite pour les journées ensoleillées.", image: "Collection/img_12.png", collection: "casual", collectionName: "Casual & Minimaliste" },
+        
+        // Collection Confort & Texture (6 produits)
+        { id: 13, name: "Robe 'Douceur Bicolore'", subtitle: "Robe en Maille Côtelée Beige", price: 155, desc: "Détail chasuble chocolat, confort douillet, texture tendance et moderne.", image: "Collection/img_13.png", collection: "confort", collectionName: "Confort & Texture" },
+        { id: 14, name: "Abaya 'Coton Douillet'", subtitle: "Robe en Jersey", price: 159, desc: "Matière stretch, coupe décontractée, idéale pour le quotidien.", image: "Collection/img_14.png", collection: "confort", collectionName: "Confort & Texture" },
+        { id: 15, name: "Robe 'Laine Tissée'", subtitle: "Abaya Hiver Chaude", price: 199, desc: "Laine légère, doublure satinée, chaleur et élégance pour l'hiver.", image: "Collection/img_15.png", collection: "confort", collectionName: "Confort & Texture" },
+        { id: 16, name: "Ensemble 'Velours Céleste'", subtitle: "Abaya Velours Bleu", price: 195, desc: "Texture veloutée, col en V, un luxe discret et raffiné.", image: "Collection/img_16.png", collection: "confort", collectionName: "Confort & Texture" },
+        { id: 17, name: "Robe 'Lin Naturel'", subtitle: "Abaya Écru Bio", price: 175, desc: "100% lin, respirant et éco-responsable, style bohème chic.", image: "Collection/img_17.png", collection: "confort", collectionName: "Confort & Texture" },
+        { id: 18, name: "Abaya 'Laine Crêpe'", subtitle: "Robe Gris Perle", price: 189, desc: "Crêpe de laine, tombé parfait, habillée et confortable à la fois.", image: "Collection/img_18.png", collection: "confort", collectionName: "Confort & Texture" }
     ];
 
     let cart = [];
@@ -585,7 +598,7 @@
         cartCountSpan.innerText = totalItems;
         if(cart.length === 0) {
             cartItemsList.innerHTML = `<div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-shopping-bag"></i></div>`;
-            cartTotalSpan.innerText = `0 €`;
+            cartTotalSpan.innerText = `0DH`;
             return;
         }
         let html = '', total = 0;
@@ -597,7 +610,7 @@
                     <div class="cart-item-img"><img src="${item.image}" alt="${item.name}" onerror="this.src='https://placehold.co/70x70/F8F0E9/C28A5C?text=Abaya'"></div>
                     <div style="flex:1;">
                         <h4 style="font-size:0.95rem;">${item.name}</h4>
-                        <div style="color:#9B6A4A; font-weight:600;">${item.price} €</div>
+                        <div style="color:#9B6A4A; font-weight:600;">${item.price}DH</div>
                         <div style="display:flex; gap:12px; margin-top:8px; align-items:center;">
                             <button class="cart-qty-minus" data-id="${item.id}" style="background:#F5EDE5; border:none; width:28px; height:28px; border-radius:30px; cursor:pointer;">-</button>
                             <span>${item.quantity}</span>
@@ -605,12 +618,12 @@
                             <button class="cart-remove" data-id="${item.id}" style="background:none; border:none; color:#C28A5C; cursor:pointer;"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
-                    <div style="font-weight:700;">${itemTotal} €</div>
+                    <div style="font-weight:700;">${itemTotal}DH</div>
                 </div>
             `;
         });
         cartItemsList.innerHTML = html;
-        cartTotalSpan.innerText = `${total} €`;
+        cartTotalSpan.innerText = `${total}DH`;
         document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), 1); }));
         document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), -1); }));
         document.querySelectorAll('.cart-remove').forEach(btn => btn.addEventListener('click', (e) => { removeFromCart(parseInt(btn.dataset.id)); }));
@@ -683,7 +696,7 @@
                     <div class="product-info">
                         <h3>${p.name}</h3>
                         <div class="product-subtitle">${p.subtitle}</div>
-                        <div class="product-price">${p.price} €</div>
+                        <div class="product-price">${p.price}DH</div>
                         <div class="product-desc">${p.desc}</div>
                         <button class="btn-outline add-cart-btn" data-id="${p.id}"><i class="fas fa-bag-shopping"></i> Ajouter au panier</button>
                     </div>
