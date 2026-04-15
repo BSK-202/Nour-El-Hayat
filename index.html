@@ -1,760 +1,1136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Nour El Hayat | Abayas & Vêtements Islamiques</title>
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SITR ABAYAS - Découvrez notre collection d'abayas élégantes pour toutes les occasions">
+<title>SITR ABAYAS | By Khadija - Abayas Élégantes</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FEFAF6;
-            color: #2C2418;
-            line-height: 1.4;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
+<style>
 
-        /* Navigation */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 1px solid rgba(151, 112, 82, 0.2);
-            position: sticky;
-            top: 0;
-            background: #FEFAF6;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(254, 250, 246, 0.95);
-        }
+/* ===== COLORS ===== */
+:root {
+    --green-dark: #0F2F2A;
+    --green-main: #1F4D45;
+    --green-soft: #2E6B5F;
+    --gold: #C8A96A;
+    --gold-light: #DBC68A;
+    --bg: #FDFBF7;
+    --white: #FFFFFF;
+    --shadow: rgba(0,0,0,0.1);
+}
 
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #9B6A4A, #6D4C3A);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .logo span {
-            font-size: 0.8rem;
-            color: #8B6B4F;
-            display: block;
-        }
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #3E2C21;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .nav-links a:hover {
-            color: #B67B4A;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .cart-icon-wrapper {
-            position: relative;
-            cursor: pointer;
-            background: #F5EDE5;
-            padding: 10px 14px;
-            border-radius: 50px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .cart-icon-wrapper:hover {
-            background: #EADBCE;
-            transform: scale(1.02);
-        }
-        .cart-icon-wrapper i {
-            font-size: 1.4rem;
-            color: #9B6A4A;
-        }
-        .cart-count {
-            background: #C28A5C;
-            color: white;
-            border-radius: 50px;
-            padding: 2px 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: #1E1E1E;
+    overflow-x: hidden;
+}
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 60px 0 40px;
-            animation: fadeUp 0.6s ease;
-        }
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 20px 0;
-        }
-        .badge {
-            background: #EADBCE;
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #7A4E30;
-        }
-        .btn-primary {
-            background: #9B6A4A;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 40px;
-            font-weight: 600;
-            color: white;
-            cursor: pointer;
-            transition: 0.25s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        .btn-primary:hover {
-            background: #7E553C;
-            transform: translateY(-2px);
-        }
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
 
-        /* Collection Sections */
-        .collection-section {
-            margin: 60px 0 40px;
-        }
-        .collection-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #2C2418;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .collection-title i {
-            color: #C28A5C;
-            font-size: 1.8rem;
-        }
-        .collection-desc {
-            color: #8B6B4F;
-            margin-bottom: 32px;
-            font-size: 1rem;
-            border-left: 3px solid #D9B48B;
-            padding-left: 16px;
-        }
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        .product-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.35s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            border: 1px solid #F0E3D8;
-            cursor: pointer;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 35px -12px rgba(108, 67, 43, 0.2);
-            border-color: #E4D0C0;
-        }
-        .product-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-            background: #F8F0E9;
-            transition: transform 0.5s ease;
-        }
-        .product-card:hover .product-img {
-            transform: scale(1.03);
-        }
-        .product-info {
-            padding: 20px;
-        }
-        .product-info h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-        .product-subtitle {
-            font-size: 0.8rem;
-            color: #B28B67;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .product-price {
-            font-weight: 800;
-            color: #9B6A4A;
-            font-size: 1.2rem;
-            margin: 12px 0;
-        }
-        .product-desc {
-            color: #6C5A4A;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            margin-bottom: 16px;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #CAAE94;
-            padding: 10px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            width: 100%;
-            color: #6D4C3A;
-            font-size: 0.9rem;
-        }
-        .btn-outline:hover {
-            background: #EBDBCE;
-            border-color: #9B6A4A;
-            transform: scale(0.98);
-        }
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
 
-        /* Services & Testimonials */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .service-card {
-            background: white;
-            padding: 28px;
-            border-radius: 32px;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid #F0E3D8;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-        .service-card i {
-            font-size: 2.2rem;
-            color: #9B6A4A;
-            margin-bottom: 15px;
-        }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .testimonial {
-            background: white;
-            padding: 28px;
-            border-radius: 32px;
-            border-left: 5px solid #D9B48B;
-            transition: 0.3s;
-        }
-        .testimonial:hover {
-            transform: translateX(5px);
-        }
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-        /* Cart Sidebar */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -500px;
-            width: 420px;
-            max-width: 90vw;
-            height: 100vh;
-            background: #FFFFFF;
-            box-shadow: -8px 0 30px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .cart-sidebar.open {
-            right: 0;
-        }
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(3px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s ease;
-        }
-        .cart-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .cart-header {
-            padding: 24px;
-            border-bottom: 1px solid #F0E3D8;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-header h3 {
-            font-size: 1.4rem;
-        }
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #9B6A4A;
-        }
-        .cart-items-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px;
-        }
-        .cart-item {
-            display: flex;
-            gap: 14px;
-            padding: 16px 0;
-            border-bottom: 1px solid #F5EDE5;
-            animation: fadeSlideIn 0.3s ease;
-        }
-        .cart-item-img {
-            width: 70px;
-            height: 70px;
-            background: #F8F0E9;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .cart-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .cart-footer {
-            padding: 20px;
-            border-top: 1px solid #F0E3D8;
-            background: #FEFAF6;
-        }
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 800;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        .btn-checkout {
-            background: #9B6A4A;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 40px;
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-checkout:hover {
-            background: #7E553C;
-        }
-        .toast-notif {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) scale(0.9);
-            background: #2C2418;
-            color: #FFE6D5;
-            padding: 12px 24px;
-            border-radius: 60px;
-            z-index: 1100;
-            opacity: 0;
-            transition: 0.2s;
-            pointer-events: none;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-        .footer {
-            background: #2A221B;
-            color: #E9DDD2;
-            padding: 48px 0 24px;
-            margin-top: 60px;
-            border-radius: 48px 48px 0 0;
-        }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateX(20px);}
-            to { opacity: 1; transform: translateX(0);}
-        }
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; text-align: center; }
-            .container { padding: 0 20px; }
-            .hero-content h1 { font-size: 2rem; }
-            .toast-notif { white-space: normal; text-align: center; width: 80%; }
-        }
-    </style>
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    background: rgba(253, 251, 247, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(200, 169, 106, 0.2);
+}
+
+.logo h1 {
+    background: linear-gradient(135deg, var(--gold), var(--green-main));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.6rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--green-dark);
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a.active {
+    color: var(--gold);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--green-dark);
+    transition: 0.3s;
+    margin-left: 20px;
+}
+
+.cart-icon:hover {
+    color: var(--gold);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: var(--gold);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin: 30px 0 50px;
+    min-height: auto;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge-hero {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--green-dark);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--green-dark);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(31, 77, 69, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(31, 77, 69, 0.4);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    border-radius: 48px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #EADBCE, #D4C5B5);
+    padding: 25px;
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+.hero-image p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    margin-top: 5px;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 40px 0 15px;
+    color: var(--green-dark);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* ===== PRODUCTS ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 30px 0 50px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--gold);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.03);
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--green-dark);
+}
+
+.product-price {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+.btn-outline {
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: 2px solid var(--gold);
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    color: var(--green-dark);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+    background: linear-gradient(135deg, #F5F0E8, #EDE5DB);
+    border-radius: 48px;
+    padding: 50px 40px;
+    margin: 50px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--gold);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    color: var(--green-dark);
+    margin-top: 10px;
+}
+
+.testimonial-stars {
+    color: var(--gold);
+    margin-top: 8px;
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin: 50px 0;
+    padding: 30px 0;
+    border-top: 1px solid rgba(200, 169, 106, 0.2);
+    border-bottom: 1px solid rgba(200, 169, 106, 0.2);
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.feature h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--green-dark);
+}
+
+.feature p {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-main));
+    border-radius: 48px;
+    padding: 40px 40px;
+    text-align: center;
+    margin: 50px 0;
+    color: white;
+}
+
+.newsletter h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 50px;
+    width: 280px;
+    font-size: 0.9rem;
+}
+
+.newsletter-form button {
+    background: var(--gold);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--green-dark);
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--green-dark);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+}
+
+/* ===== CART SIDEBAR ===== */
+.cart-sidebar {
+    position: fixed;
+    right: -380px;
+    top: 0;
+    width: 380px;
+    height: 100%;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    transition: 0.4s;
+    padding: 25px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.cart-header h3 {
+    font-size: 1.3rem;
+    color: var(--green-dark);
+}
+
+.close-cart {
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #999;
+    transition: 0.3s;
+}
+
+.close-cart:hover {
+    color: var(--green-dark);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cart-item-actions button {
+    background: var(--green-soft);
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.cart-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--green-dark);
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+/* ===== TOAST ===== */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--green-main);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+    font-size: 0.85rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade {
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-image {
+        min-height: 280px;
+    }
+    
+    .hero-image img {
+        max-width: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin: 30px 0 10px;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .testimonials {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        gap: 25px;
+    }
+    
+    .hero-image {
+        min-height: 250px;
+    }
+    
+    .products-grid {
+        gap: 20px;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <div class="container">
-    <nav class="navbar">
-        <div class="logo">
-            <h1>Nour El Hayat</h1>
-            <span>✨ Élégance & Pudeur ✨</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#temoignages">Avis</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="cart-icon-wrapper" id="cartIcon">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="cart-count" id="cartCount">0</span>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <div class="hero-content">
-            <div class="badge">Collection Printemps-Été 2026</div>
-            <h1>L'élégance modeste,<br>inspiration divine</h1>
-            <button class="btn-primary" id="exploreBtn">Explorer les collections <i class="fas fa-arrow-right"></i></button>
-        </div>
-        <div style="flex:1; background:#EADBCE; border-radius:48px; padding:20px; text-align:center;">
-            <i class="fas fa-kaaba" style="font-size:7rem; color:#9B6A4A;"></i>
-            <p style="margin-top: 10px;">Nouvelle Collection • Élégance & Cérémonie</p>
-        </div>
-    </div>
-
-    <!-- Conteneur des collections -->
-    <div id="collections">
-        <div id="collection-elegance"></div>
-        <div id="collection-casual"></div>
-        <div id="collection-confort"></div>
-    </div>
-
-    <div id="services">
-        <h2 class="collection-title" style="justify-content:center;"><i class="fas fa-hand-sparkles"></i> Nos Services Premium</h2>
-        <div class="services-grid">
-            <div class="service-card"><i class="fas fa-ruler-combined"></i><h4>Retouches Gratuites</h4><p>Ajustement parfait pour chaque silhouette</p></div>
-            <div class="service-card"><i class="fas fa-gem"></i><h4>Broderie Personnalisée</h4><p>Initiales & motifs délicats</p></div>
-            <div class="service-card"><i class="fas fa-truck-fast"></i><h4>Livraison Express</h4><p>Monde entier sous 48h</p></div>
-            <div class="service-card"><i class="fas fa-hand-sparkles"></i><h4>Conseil en Style</h4><p>Assistante virtuelle dédiée</p></div>
-        </div>
-    </div>
-
-    <div id="temoignages">
-        <h2 class="collection-title" style="justify-content:center;"><i class="fas fa-star"></i> Elles nous ont fait confiance</h2>
-        <div class="testimonials-grid" id="testimonialsContainer"></div>
-    </div>
+<div class="navbar">
+<div class="logo">
+<h1>SITR ABAYAS</h1>
+</div>
+<div class="nav-links">
+<a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a>
+<a href="#collections" class="nav-link" data-section="collections">Collections</a>
+<a href="#avis" class="nav-link" data-section="avis">À propos</a>
+<a href="#contact" class="nav-link" data-section="contact">Contact</a>
+<div class="cart-icon" onclick="toggleCart()">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count" id="cartCount">0</span>
+</div>
+</div>
+</div>
 </div>
 
+<!-- HERO SECTION -->
+<section id="accueil">
+<div class="container">
+<div class="hero fade">
+<div class="hero-content">
+<span class="badge-hero">✨ Nouvelle Collection Printemps-Été 2026</span>
+<h1>L'élégance modeste,<br>inspiration divine</h1>
+<p>Découvrez notre collection exclusive d'abayas confectionnées avec des tissus nobles et des finitions raffinées.</p>
+<button class="btn-primary" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
+Explorer les collections <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+<div class="hero-image">
+<img src="logo.png" alt="SITR ABAYAS" onerror="this.src='https://via.placeholder.com/300x300?text=SITR+ABAYAS'">
+<p>Nouvelle Collection • Élégance & Cérémonie</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<div class="container">
+<div class="features">
+<div class="feature"><i class="fas fa-truck"></i><h4>Livraison Gratuite</h4><p>À partir de 500 DH</p></div>
+<div class="feature"><i class="fas fa-undo-alt"></i><h4>Retours Faciles</h4><p>Satisfait ou remboursé</p></div>
+<div class="feature"><i class="fas fa-lock"></i><h4>Paiement Sécurisé</h4><p>100% sécurisé</p></div>
+<div class="feature"><i class="fas fa-gem"></i><h4>Qualité Premium</h4><p>Tissus nobles</p></div>
+</div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section id="collections">
+<div class="container">
+<h2 class="section-title">Nos Collections</h2>
+<p class="section-subtitle">Découvrez nos plus belles pièces pour sublimer votre élégance</p>
+<div class="products-grid" id="products"></div>
+</div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="avis">
+<div class="container">
+<div class="testimonials">
+<h2 class="section-title" style="margin-top:0;">Ce que disent nos clientes</h2>
+<p class="section-subtitle">Des centaines de femmes satisfaites à travers le monde</p>
+<div class="testimonials-grid" id="testimonials"></div>
+</div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="container">
+<div class="newsletter">
+<h3>Recevez nos offres exclusives</h3>
+<p>Inscrivez-vous pour recevoir nos nouveautés et promotions</p>
+<form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Merci pour votre inscription !'); this.reset();">
+<input type="email" placeholder="Votre email" required>
+<button type="submit">S'inscrire</button>
+</form>
+</div>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer" id="contact">
-    <div class="container">
-        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;">
-            <div>
-                <h4 style="margin-bottom:15px;">Nour El Hayat</h4>
-                <p>Mode islamique haut de gamme</p>
-                <div style="margin-top:15px;">
-                    <i class="fab fa-instagram" style="margin-right:15px; font-size:1.3rem; cursor:pointer;"></i>
-                    <i class="fab fa-facebook-f" style="margin-right:15px; font-size:1.3rem; cursor:pointer;"></i>
-                    <i class="fab fa-pinterest-p" style="font-size:1.3rem; cursor:pointer;"></i>
-                </div>
-            </div>
-            <div>
-                <h4 style="margin-bottom:15px;">Liens rapides</h4>
-                <p style="margin-bottom:8px;">Nouveautés</p>
-                <p style="margin-bottom:8px;">Guide des tailles</p>
-                <p style="margin-bottom:8px;">FAQ</p>
-                <p>Conditions générales</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom:15px;">Contact</h4>
-                <p style="margin-bottom:8px;"><i class="fas fa-phone-alt"></i> +212 6 23 45 67 89</p>
-                <p style="margin-bottom:8px;"><i class="fas fa-envelope"></i> contact@nour-elhayat.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Mohammedia, Maroc</p>
-            </div>
-        </div>
-        <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(203,186,168,0.2);">
-            © 2026 Nour El Hayat - Élégance & Pudeur | Tous droits réservés
-        </div>
-    </div>
+<div class="footer-content">
+<div class="footer-section">
+<h4>SITR ABAYAS</h4>
+<p>Par Khadija<br>L'élégance modeste pour toutes les femmes.</p>
+</div>
+<div class="footer-section">
+<h4>Liens rapides</h4>
+<p>Accueil<br>Collections<br>À propos<br>Contact</p>
+</div>
+<div class="footer-section">
+<h4>Contact</h4>
+<p>Email: contact@sitrabayas.com<br>Tél: +212 5XX XXX XXX<br>Maroc</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-pinterest"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 SITR ABAYAS by Khadija. Tous droits réservés.</p>
+</div>
 </footer>
 
-<!-- Panier Sidebar -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-        <h3><i class="fas fa-shopping-bag"></i> Mon panier</h3>
-        <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="cart-items-list" id="cartItemsList"><div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-heart"></i></div></div>
-    <div class="cart-footer">
-        <div class="cart-total"><span>Total :</span><span id="cartTotalPrice">0DH</span></div>
-        <button class="btn-checkout" id="checkoutBtn">Passer la commande <i class="fas fa-arrow-right"></i></button>
-    </div>
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cart">
+<div class="cart-header">
+<h3>Mon Panier</h3>
+<i class="fas fa-times close-cart" onclick="toggleCart()"></i>
 </div>
-<div id="toastMsg" class="toast-notif"></div>
+<div id="cartItems"></div>
+<div id="cartTotal"></div>
+</div>
 
 <script>
-    // ---------- DONNÉES PRODUITS AVEC 18 PRODUITS (6 par collection) ----------
-    const products = [
-        // Collection Élégance & Cérémonie (6 produits)
-        { id: 1, name: "Abaya 'Lace Prestige'", subtitle: "Robe Longue en Dentelle Blanche", price: 189, desc: "Boutonnage perlé, dentelle raffinée, coupe cérémonie parfaite pour les grandes occasions.", image: "Collection/img_1.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 2, name: "Robe 'Éclat Lunaire'", subtitle: "Abaya de Soirée Blanche", price: 199, desc: "Textures scintillantes, effet lumière captivant, manches évassées pour un look glamour.", image: "Collection/img_2.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 3, name: "Abaya 'Pureté Satinée'", subtitle: "Robe Chemise Blanche", price: 169, desc: "Col volanté raffiné, manches évasées, satin fluide pour une élégance intemporelle.", image: "Collection/img_3.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 4, name: "Abaya 'Nuit Étoilée'", subtitle: "Robe Bleu Nuit Brodée", price: 195, desc: "Broderies délicates, tissu fluide, parfaite pour les cérémonies et soirées chic.", image: "Collection/img_4.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 5, name: "Robe 'Perle d'Orient'", subtitle: "Abaya Ivoire", price: 185, desc: "Détails perlés, manches kimono, une élégance orientale moderne.", image: "Collection/img_5.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        { id: 6, name: "Abaya 'Jardin Secret'", subtitle: "Robe Vert Émeraude", price: 199, desc: "Imprimé floral raffiné, coupe cintrée, élégance et modernité.", image: "Collection/img_6.png", collection: "elegance", collectionName: "Élégance & Cérémonie" },
-        
-        // Collection Casual & Minimaliste (6 produits)
-        { id: 7, name: "Ensemble 'Sérénité Grise'", subtitle: "Abaya Fluide Anthracite", price: 159, desc: "Hijab assorti inclus, coupe minimaliste et légère, parfait pour le quotidien.", image: "Collection/img_7.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 8, name: "Ensemble 'Olive Urbaine'", subtitle: "Tunique Longue à Fentes", price: 179, desc: "Pantalon large assorti, style moderne et urbain avec des fentes latérales élégantes.", image: "Collection/img_8.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 9, name: "Robe 'Drapé Impérial'", subtitle: "Abaya Bordeaux", price: 185, desc: "Cascade latérale, poignets élastiqués, drapé élégant pour une allure sophistiquée.", image: "Collection/img_9.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 10, name: "Abaya 'Brume Matinale'", subtitle: "Robe Bleu Ciel", price: 165, desc: "Coupe fluide, manches 3/4, légère et aérienne pour le printemps.", image: "Collection/img_10.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 11, name: "Ensemble 'Élégance Noire'", subtitle: "Abaya Noir Mat", price: 175, desc: "Ligne épurée, ceinture assortie, un basique chic et intemporel.", image: "Collection/img_11.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        { id: 12, name: "Robe 'Sable Doré'", subtitle: "Abaya Beige Camel", price: 169, desc: "Teinte naturelle, coupe relax, parfaite pour les journées ensoleillées.", image: "Collection/img_12.png", collection: "casual", collectionName: "Casual & Minimaliste" },
-        
-        // Collection Confort & Texture (6 produits)
-        { id: 13, name: "Robe 'Douceur Bicolore'", subtitle: "Robe en Maille Côtelée Beige", price: 155, desc: "Détail chasuble chocolat, confort douillet, texture tendance et moderne.", image: "Collection/img_13.png", collection: "confort", collectionName: "Confort & Texture" },
-        { id: 14, name: "Abaya 'Coton Douillet'", subtitle: "Robe en Jersey", price: 159, desc: "Matière stretch, coupe décontractée, idéale pour le quotidien.", image: "Collection/img_14.png", collection: "confort", collectionName: "Confort & Texture" },
-        { id: 15, name: "Robe 'Laine Tissée'", subtitle: "Abaya Hiver Chaude", price: 199, desc: "Laine légère, doublure satinée, chaleur et élégance pour l'hiver.", image: "Collection/img_15.png", collection: "confort", collectionName: "Confort & Texture" },
-        { id: 16, name: "Ensemble 'Velours Céleste'", subtitle: "Abaya Velours Bleu", price: 195, desc: "Texture veloutée, col en V, un luxe discret et raffiné.", image: "Collection/img_16.png", collection: "confort", collectionName: "Confort & Texture" },
-        { id: 17, name: "Robe 'Lin Naturel'", subtitle: "Abaya Écru Bio", price: 175, desc: "100% lin, respirant et éco-responsable, style bohème chic.", image: "Collection/img_17.png", collection: "confort", collectionName: "Confort & Texture" },
-        { id: 18, name: "Abaya 'Laine Crêpe'", subtitle: "Robe Gris Perle", price: 189, desc: "Crêpe de laine, tombé parfait, habillée et confortable à la fois.", image: "Collection/img_18.png", collection: "confort", collectionName: "Confort & Texture" }
-    ];
 
-    let cart = [];
+// ===== 18 PRODUITS =====
+const products = [
+    {id: 1, name: "Abaya Prestige", price: 189, img: "Collection/img_1.png", badge: "NEW"},
+    {id: 2, name: "Abaya Lunaire", price: 199, img: "Collection/img_2.png", badge: "BESTSELLER"},
+    {id: 3, name: "Abaya Satinée", price: 169, img: "Collection/img_3.png", badge: "-10%"},
+    {id: 4, name: "Abaya Royale", price: 249, img: "Collection/img_4.png", badge: "PREMIUM"},
+    {id: 5, name: "Abaya Céleste", price: 179, img: "Collection/img_5.png", badge: "NEW"},
+    {id: 6, name: "Abaya Dorée", price: 229, img: "Collection/img_6.png", badge: "LIMITED"},
+    {id: 7, name: "Abaya Émeraude", price: 199, img: "Collection/img_7.png", badge: "NEW"},
+    {id: 8, name: "Abaya Nacrée", price: 159, img: "Collection/img_8.png", badge: "-15%"},
+    {id: 9, name: "Abaya Velours", price: 219, img: "Collection/img_9.png", badge: "PREMIUM"},
+    {id: 10, name: "Abaya Soie", price: 239, img: "Collection/img_10.png", badge: "LIMITED"},
+    {id: 11, name: "Abaya Rubis", price: 189, img: "Collection/img_11.png", badge: "NEW"},
+    {id: 12, name: "Abaya Perle", price: 209, img: "Collection/img_12.png", badge: "BESTSELLER"},
+    {id: 13, name: "Abaya Ambre", price: 179, img: "Collection/img_13.png", badge: "-10%"},
+    {id: 14, name: "Abaya Topaze", price: 199, img: "Collection/img_14.png", badge: "NEW"},
+    {id: 15, name: "Abaya Opale", price: 229, img: "Collection/img_15.png", badge: "PREMIUM"},
+    {id: 16, name: "Abaya Crystal", price: 259, img: "Collection/img_16.png", badge: "LIMITED"},
+    {id: 17, name: "Abaya Saphir", price: 199, img: "Collection/img_17.png", badge: "NEW"},
+    {id: 18, name: "Abaya Diamant", price: 279, img: "Collection/img_18.png", badge: "EXCLUSIVE"}
+];
 
-    // Éléments DOM
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartOverlay = document.getElementById('cartOverlay');
-    const cartIconBtn = document.getElementById('cartIcon');
-    const closeCartBtn = document.getElementById('closeCartBtn');
-    const cartItemsList = document.getElementById('cartItemsList');
-    const cartCountSpan = document.getElementById('cartCount');
-    const cartTotalSpan = document.getElementById('cartTotalPrice');
-    const toastMsg = document.getElementById('toastMsg');
+// ===== AVIS CLIENTS =====
+const testimonials = [
+    {name: "Fatima Z.", city: "Casablanca", text: "Les abayas sont d'une qualité exceptionnelle ! Le tissu est fluide et la coupe parfaite. Je recommande vivement.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/1.jpg"},
+    {name: "Sofia M.", city: "Rabat", text: "J'ai reçu ma commande rapidement. L'abaya est encore plus belle en vrai. Merci pour votre professionnalisme.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/2.jpg"},
+    {name: "Leila H.", city: "Marrakech", text: "Une boutique en ligne de confiance. Les prix sont raisonnables pour une qualité premium. Je suis ravie !", rating: 4, avatar: "https://randomuser.me/api/portraits/women/3.jpg"},
+    {name: "Nadia R.", city: "Tanger", text: "La collection est magnifique, chaque pièce est unique. Le service client est à l'écoute.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/4.jpg"},
+    {name: "Karima B.", city: "Fès", text: "Une expérience d'achat parfaite. Les abayas sont élégantes et confortables. Je reviendrai !", rating: 5, avatar: "https://randomuser.me/api/portraits/women/5.jpg"},
+    {name: "Samira L.", city: "Paris", text: "Livraison internationale rapide. Les abayas sont sublimes, parfaites pour les cérémonies.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/6.jpg"}
+];
 
-    function showToast(message) {
-        toastMsg.textContent = message;
-        toastMsg.style.opacity = '1';
-        toastMsg.style.transform = 'translateX(-50%) scale(1)';
-        setTimeout(() => {
-            toastMsg.style.opacity = '0';
-            toastMsg.style.transform = 'translateX(-50%) scale(0.9)';
-        }, 1800);
+let cart = [];
+
+// ===== RENDER PRODUITS =====
+function renderProducts() {
+    const container = document.getElementById("products");
+    if(!container) return;
+    
+    container.innerHTML = products.map(product => `
+        <div class="product-card fade">
+            <div class="product-badge">${product.badge}</div>
+            <img class="product-img" src="${product.img}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${product.name}'">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="product-price">${product.price} DH</div>
+                <button class="btn-outline" onclick="addToCart(${product.id})">
+                    <i class="fas fa-shopping-cart"></i> Ajouter
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== RENDER AVIS =====
+function renderTestimonials() {
+    const container = document.getElementById("testimonials");
+    if(!container) return;
+    
+    container.innerHTML = testimonials.map(t => `
+        <div class="testimonial-card fade">
+            <img class="testimonial-avatar" src="${t.avatar}" alt="${t.name}">
+            <div class="testimonial-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
+            <p class="testimonial-text">"${t.text}"</p>
+            <div class="testimonial-name">${t.name}</div>
+            <small style="color:#999;">${t.city}</small>
+        </div>
+    `).join('');
+}
+
+// ===== PANIER =====
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    const existingItem = cart.find(item => item.id === id);
+    
+    if(existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({...product, quantity: 1});
     }
-
-    function saveCart() {
-        localStorage.setItem('nourCart', JSON.stringify(cart));
-        updateCartUI();
+    
+    updateCart();
+    saveCart();
+    showToast(`${product.name} ajouté au panier !`);
+    
+    // Animation sur le bouton
+    if(event && event.target) {
+        event.target.style.transform = 'scale(0.95)';
+        setTimeout(() => { if(event.target) event.target.style.transform = 'scale(1)'; }, 200);
     }
+}
 
-    function loadCart() {
-        const saved = localStorage.getItem('nourCart');
-        if(saved) { cart = JSON.parse(saved); if(!Array.isArray(cart)) cart = []; }
-        else cart = [];
-        updateCartUI();
+function updateCart() {
+    const cartItemsContainer = document.getElementById("cartItems");
+    const cartTotalContainer = document.getElementById("cartTotal");
+    const cartCount = document.getElementById("cartCount");
+    
+    if(!cartItemsContainer) return;
+    
+    if(cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="empty-cart"><i class="fas fa-shopping-bag" style="font-size:2.5rem; margin-bottom:10px;"></i><p>Votre panier est vide</p></div>';
+        if(cartTotalContainer) cartTotalContainer.innerHTML = '';
+        if(cartCount) cartCount.textContent = '0';
+        return;
     }
-
-    function updateCartUI() {
-        const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
-        cartCountSpan.innerText = totalItems;
-        if(cart.length === 0) {
-            cartItemsList.innerHTML = `<div class="empty-cart" style="text-align:center; padding:40px;">Votre panier est vide <i class="fas fa-shopping-bag"></i></div>`;
-            cartTotalSpan.innerText = `0DH`;
-            return;
-        }
-        let html = '', total = 0;
-        cart.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            total += itemTotal;
-            html += `
-                <div class="cart-item">
-                    <div class="cart-item-img"><img src="${item.image}" alt="${item.name}" onerror="this.src='https://placehold.co/70x70/F8F0E9/C28A5C?text=Abaya'"></div>
-                    <div style="flex:1;">
-                        <h4 style="font-size:0.95rem;">${item.name}</h4>
-                        <div style="color:#9B6A4A; font-weight:600;">${item.price}DH</div>
-                        <div style="display:flex; gap:12px; margin-top:8px; align-items:center;">
-                            <button class="cart-qty-minus" data-id="${item.id}" style="background:#F5EDE5; border:none; width:28px; height:28px; border-radius:30px; cursor:pointer;">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="cart-qty-plus" data-id="${item.id}" style="background:#F5EDE5; border:none; width:28px; height:28px; border-radius:30px; cursor:pointer;">+</button>
-                            <button class="cart-remove" data-id="${item.id}" style="background:none; border:none; color:#C28A5C; cursor:pointer;"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                    <div style="font-weight:700;">${itemTotal}DH</div>
+    
+    let total = 0;
+    let itemCount = 0;
+    
+    cartItemsContainer.innerHTML = cart.map(item => {
+        total += item.price * item.quantity;
+        itemCount += item.quantity;
+        return `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <div class="cart-item-price">${item.price} DH</div>
                 </div>
-            `;
-        });
-        cartItemsList.innerHTML = html;
-        cartTotalSpan.innerText = `${total}DH`;
-        document.querySelectorAll('.cart-qty-plus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), 1); }));
-        document.querySelectorAll('.cart-qty-minus').forEach(btn => btn.addEventListener('click', (e) => { updateQuantity(parseInt(btn.dataset.id), -1); }));
-        document.querySelectorAll('.cart-remove').forEach(btn => btn.addEventListener('click', (e) => { removeFromCart(parseInt(btn.dataset.id)); }));
+                <div class="cart-item-actions">
+                    <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                    <button onclick="removeFromCart(${item.id})" style="background:#C8A96A;">🗑️</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    if(cartTotalContainer) {
+        cartTotalContainer.innerHTML = `
+            <div class="cart-total">Total: ${total} DH</div>
+            <button class="checkout-btn" onclick="checkout()"><i class="fas fa-credit-card"></i> Commander</button>
+        `;
     }
+    
+    if(cartCount) cartCount.textContent = itemCount;
+}
 
-    function updateQuantity(id, delta) {
-        const idx = cart.findIndex(i => i.id === id);
-        if(idx !== -1) {
-            const newQty = cart[idx].quantity + delta;
-            if(newQty <= 0) cart.splice(idx,1);
-            else cart[idx].quantity = newQty;
+function updateQuantity(id, change) {
+    const item = cart.find(item => item.id === id);
+    if(item) {
+        item.quantity += change;
+        if(item.quantity <= 0) {
+            removeFromCart(id);
+        } else {
+            updateCart();
             saveCart();
-            showToast(delta > 0 ? "Quantité augmentée" : "Quantité diminuée");
         }
     }
-    function removeFromCart(id) { cart = cart.filter(i => i.id !== id); saveCart(); showToast("Article retiré du panier"); }
+}
 
-    function addToCart(product) {
-        const existing = cart.find(i => i.id === product.id);
-        if(existing) { existing.quantity++; saveCart(); showToast(`➕ ${product.name} (x${existing.quantity})`); }
-        else { cart.push({ ...product, quantity: 1 }); saveCart(); showToast(`✨ ${product.name} ajouté au panier`); }
-        
-        // Animation sur l'icône panier
-        const cartIcon = document.getElementById('cartIcon');
-        cartIcon.style.transform = 'scale(1.05)';
-        setTimeout(() => { cartIcon.style.transform = 'scale(1)'; }, 200);
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCart();
+    saveCart();
+    showToast('Article retiré du panier');
+}
+
+function checkout() {
+    if(cart.length === 0) {
+        showToast('Votre panier est vide');
+        return;
     }
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    alert(`Merci pour votre commande !\nTotal: ${total} DH\nUn conseiller vous contactera sous 24h.`);
+    cart = [];
+    updateCart();
+    saveCart();
+    toggleCart();
+}
 
-    function openCart() { cartSidebar.classList.add('open'); cartOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    function closeCart() { cartSidebar.classList.remove('open'); cartOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); }
+function loadCart() {
+    const saved = localStorage.getItem('cart');
+    if(saved) { cart = JSON.parse(saved); updateCart(); }
+}
 
-    // Rendu des collections
-    function renderCollections() {
-        const eleganceDiv = document.getElementById('collection-elegance');
-        const casualDiv = document.getElementById('collection-casual');
-        const confortDiv = document.getElementById('collection-confort');
-        
-        const eleganceProds = products.filter(p => p.collection === 'elegance');
-        const casualProds = products.filter(p => p.collection === 'casual');
-        const confortProds = products.filter(p => p.collection === 'confort');
-        
-        eleganceDiv.innerHTML = `
-            <div class="collection-section">
-                <div class="collection-title"><i class="fas fa-crown"></i> Collection Élégance & Cérémonie</div>
-                <div class="collection-desc">Des pièces d'exception pour vos moments précieux, alliant raffinement et tradition.</div>
-                <div class="products-grid" id="grid-elegance"></div>
-            </div>
-        `;
-        casualDiv.innerHTML = `
-            <div class="collection-section">
-                <div class="collection-title"><i class="fas fa-leaf"></i> Collection Casual & Minimaliste</div>
-                <div class="collection-desc">L'élégance du quotidien, des silhouettes sobres et modernes pour toutes les femmes.</div>
-                <div class="products-grid" id="grid-casual"></div>
-            </div>
-        `;
-        confortDiv.innerHTML = `
-            <div class="collection-section">
-                <div class="collection-title"><i class="fas fa-cloud-moon"></i> Collection Confort & Texture</div>
-                <div class="collection-desc">Des matières douces et enveloppantes pour un style décontracté et chic.</div>
-                <div class="products-grid" id="grid-confort"></div>
-            </div>
-        `;
-        
-        function renderGrid(containerId, productsArray) {
-            const grid = document.getElementById(containerId);
-            if(!grid) return;
-            grid.innerHTML = productsArray.map(p => `
-                <div class="product-card">
-                    <img class="product-img" src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/400x320/F8F0E9/C28A5C?text=Nour+El+Hayat'">
-                    <div class="product-info">
-                        <h3>${p.name}</h3>
-                        <div class="product-subtitle">${p.subtitle}</div>
-                        <div class="product-price">${p.price}DH</div>
-                        <div class="product-desc">${p.desc}</div>
-                        <button class="btn-outline add-cart-btn" data-id="${p.id}"><i class="fas fa-bag-shopping"></i> Ajouter au panier</button>
-                    </div>
-                </div>
-            `).join('');
-            grid.querySelectorAll('.add-cart-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.dataset.id);
-                    const product = products.find(p => p.id === id);
-                    if(product) addToCart(product);
+function toggleCart() {
+    const cart = document.getElementById("cart");
+    const overlay = document.getElementById("cartOverlay");
+    cart.classList.toggle("open");
+    overlay.classList.toggle("active");
+    document.body.style.overflow = cart.classList.contains("open") ? "hidden" : "auto";
+}
+
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+// ===== LIENS ACTIFS =====
+function setActiveLink() {
+    const sections = ['accueil', 'collections', 'avis', 'contact'];
+    const scrollPosition = window.scrollY + 150;
+    
+    for(let section of sections) {
+        const element = document.getElementById(section);
+        if(element) {
+            const offsetTop = element.offsetTop;
+            const offsetBottom = offsetTop + element.offsetHeight;
+            if(scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('data-section') === section) {
+                        link.classList.add('active');
+                    }
                 });
-            });
+                break;
+            }
         }
-        renderGrid('grid-elegance', eleganceProds);
-        renderGrid('grid-casual', casualProds);
-        renderGrid('grid-confort', confortProds);
     }
+}
 
-    function renderTestimonials() {
-        const testimonials = [
-            { name: "Amina D.", role: "Cliente fidèle", text: "Les abayas sont d'une qualité exceptionnelle, la dentelle 'Lace Prestige' est magnifique !", icon: "fas fa-female" },
-            { name: "Sofia L.", role: "Styliste modeste", text: "Enfin une marque qui comprend la femme moderne tout en respectant la pudeur avec élégance.", icon: "fas fa-star" },
-            { name: "Yasmine K.", role: "Influenceuse mode", text: "La collection confort & texture est un coup de cœur, la robe bicolore est parfaite au quotidien.", icon: "fas fa-heart" }
-        ];
-        const container = document.getElementById('testimonialsContainer');
-        container.innerHTML = testimonials.map(t => `
-            <div class="testimonial">
-                <p><i class="fas fa-quote-left" style="color:#D9B48B; margin-right:8px;"></i> "${t.text}"</p>
-                <div style="display:flex; gap:12px; align-items:center; margin-top:20px;">
-                    <i class="${t.icon}" style="font-size:2rem; color:#C28A5C;"></i>
-                    <div><h5 style="font-size:1rem;">${t.name}</h5><span style="font-size:0.8rem; color:#8B6B4F;">${t.role}</span></div>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    // Événements
-    document.getElementById('exploreBtn')?.addEventListener('click', () => {
-        document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
-    });
-    cartIconBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
-    cartOverlay.addEventListener('click', closeCart);
-    document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-        if(cart.length === 0) showToast("Votre panier est vide");
-        else { 
-            showToast("🧾 Commande validée ! Merci pour votre confiance ❤️"); 
-            cart = []; 
-            saveCart(); 
-            closeCart(); 
-        }
-    });
-
-    // Initialisation
-    renderCollections();
+// ===== INIT =====
+function init() {
+    renderProducts();
     renderTestimonials();
     loadCart();
+    
+    // Scroll event pour liens actifs
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+    
+    // Clic sur les liens de navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.getAttribute('data-section');
+            const target = document.getElementById(section);
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+}
+
+init();
+
 </script>
+
 </body>
 </html>
