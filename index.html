@@ -374,12 +374,13 @@ h1, h2, h3 {
 }
 
 .testimonial-avatar {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
     border: 3px solid var(--gold);
+    background-color: #f0f0f0;
 }
 
 .testimonial-text {
@@ -909,14 +910,14 @@ const products = [
     {id: 18, name: "Abaya Diamant", price: 279, img: "Collection/img_18.png", badge: "EXCLUSIVE"}
 ];
 
-// ===== AVIS CLIENTS =====
+// ===== AVIS CLIENTS AVEC VOS IMAGES =====
 const testimonials = [
-    {name: "Fatima Z.", city: "Casablanca", text: "Les abayas sont d'une qualité exceptionnelle ! Le tissu est fluide et la coupe parfaite. Je recommande vivement.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/1.jpg"},
-    {name: "Sofia M.", city: "Rabat", text: "J'ai reçu ma commande rapidement. L'abaya est encore plus belle en vrai. Merci pour votre professionnalisme.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/2.jpg"},
-    {name: "Leila H.", city: "Marrakech", text: "Une boutique en ligne de confiance. Les prix sont raisonnables pour une qualité premium. Je suis ravie !", rating: 4, avatar: "https://randomuser.me/api/portraits/women/3.jpg"},
-    {name: "Nadia R.", city: "Tanger", text: "La collection est magnifique, chaque pièce est unique. Le service client est à l'écoute.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/4.jpg"},
-    {name: "Karima B.", city: "Fès", text: "Une expérience d'achat parfaite. Les abayas sont élégantes et confortables. Je reviendrai !", rating: 5, avatar: "https://randomuser.me/api/portraits/women/5.jpg"},
-    {name: "Samira L.", city: "Paris", text: "Livraison internationale rapide. Les abayas sont sublimes, parfaites pour les cérémonies.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/6.jpg"}
+    {name: "Fatima Z.", city: "Casablanca", text: "Les abayas sont d'une qualité exceptionnelle ! Le tissu est fluide et la coupe parfaite. Je recommande vivement.", rating: 5, avatar: "profil1.png"},
+    {name: "Sofia M.", city: "Rabat", text: "J'ai reçu ma commande rapidement. L'abaya est encore plus belle en vrai. Merci pour votre professionnalisme.", rating: 5, avatar: "profil2.png"},
+    {name: "Leila H.", city: "Marrakech", text: "Une boutique en ligne de confiance. Les prix sont raisonnables pour une qualité premium. Je suis ravie !", rating: 4, avatar: "profil3.png"},
+    {name: "Nadia R.", city: "Tanger", text: "La collection est magnifique, chaque pièce est unique. Le service client est à l'écoute.", rating: 5, avatar: "profil4.png"},
+    {name: "Karima B.", city: "Fès", text: "Une expérience d'achat parfaite. Les abayas sont élégantes et confortables. Je reviendrai !", rating: 5, avatar: "profil5.png"},
+    {name: "Samira L.", city: "Paris", text: "Livraison internationale rapide. Les abayas sont sublimes, parfaites pour les cérémonies.", rating: 5, avatar: "profil6.png"}
 ];
 
 let cart = [];
@@ -946,9 +947,9 @@ function renderTestimonials() {
     const container = document.getElementById("testimonials");
     if(!container) return;
     
-    container.innerHTML = testimonials.map(t => `
+    container.innerHTML = testimonials.map((t, index) => `
         <div class="testimonial-card fade">
-            <img class="testimonial-avatar" src="${t.avatar}" alt="${t.name}">
+            <img class="testimonial-avatar" src="${t.avatar}" alt="${t.name}" onerror="this.src='https://via.placeholder.com/80x80?text=Avatar'">
             <div class="testimonial-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
             <p class="testimonial-text">"${t.text}"</p>
             <div class="testimonial-name">${t.name}</div>
